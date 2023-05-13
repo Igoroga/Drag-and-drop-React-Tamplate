@@ -18,11 +18,13 @@ console.log(currentCard);
 
 const dragEndHandler = (e) => {
   e.target.style.background = 'white'
+  e.target.style.scale = '1'
 }
 
 const dragOverHandler = (e) => {
   e.preventDefault()
-  e.target.style.background = 'red'
+  e.target.style.background = 'lightgreen'
+  e.target.style.scale = '1.1'
 }
 
 const dropHandler = (e,card) => {
@@ -37,6 +39,7 @@ const dropHandler = (e,card) => {
   return c 
  }));
  e.target.style.background = 'white'
+ e.target.style.scale = '1'
 }
 
 const sortFunc = (a,b) => {
@@ -62,7 +65,7 @@ const sortFunc = (a,b) => {
       onDrop={(e) => dropHandler(e,card)} 
       draggable='true'
       className='card'>
-         <div>{card.text ? card.text : ''}</div>
+         {card.text ? card.text : ''}
         </div>
         )}
     </div>
